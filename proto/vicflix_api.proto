@@ -3,7 +3,7 @@ package VixFlixAPI;
 
 service StorageAPI {
     rpc ImportMedia (ImportMediaRequest) returns (ImportMediaResponse);
-    rpc QueryMedia (QueryMediaRequest) returns (ImportMediaResponse);
+    rpc QueryMedia (QueryMediaRequest) returns (QueryMediaResponse);
 }
 
 message MediaObject{
