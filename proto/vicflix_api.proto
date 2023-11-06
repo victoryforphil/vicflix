@@ -1,0 +1,33 @@
+syntax = "proto3";
+package VixFlixAPI;
+
+service StorageAPI {
+    rpc ImportMedia (ImportMediaRequest) returns (ImportMediaResponse);
+    rpc QueryMedia (QueryMediaRequest) returns (ImportMediaResponse);
+}
+
+message MediaObject{
+    string name = 1;
+    string path = 2;
+    string file_extension = 3;
+    string timestamp = 4;
+}
+
+message ImportMediaRequest {
+    MediaObject media = 1;
+}
+
+message ImportMediaResponse {
+    string message = 1;
+    string video_id = 2;
+    string path = 3;
+}
+
+message QueryMediaRequest {
+   int32 limit = 1;
+}
+
+message QueryMediaResponse {
+    string message = 1;
+    repeated MediaObject media_list = 2;
+}
